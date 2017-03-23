@@ -9,17 +9,19 @@ def display_city_names
 end
 
 def area_code(suburb)
-     puts "The area code of #{suburb}: #{@dial_book[suburb]}"
+     puts "The area code of #{suburb} is #{@dial_book[suburb]}."
 end
 
 loop do
-     puts "Do you want to look up a city name?(Y/N)"
+     puts "Do you want to look up an area code for a city?(Y/N)"
 
      answer = gets.chomp.upcase
      if answer != "Y"
           break
      end
+
      display_city_names
+     puts "Enter your city of choice."
      city_name = gets.chomp.capitalize
      if @dial_book.has_key? (city_name)
           area_code(city_name)
